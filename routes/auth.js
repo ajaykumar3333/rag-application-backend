@@ -14,9 +14,10 @@ const signupSchema = Joi.object({
 });
 
 const loginSchema = Joi.object({
-  username: Joi.string().required(),
+  email: Joi.string().email().required(),
   password: Joi.string().required(),
 });
+
 
 const forgotSchema = Joi.object({
   email: Joi.string().email().required(),
