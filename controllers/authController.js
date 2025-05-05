@@ -45,13 +45,7 @@ export const login = async (req, res) => {
       { expiresIn: JWT_EXPIRES_IN }
     );
 
-    res.json({
-      token,
-      user: {
-        id: user._id,
-        email: user.email,
-        isAdmin: user.isAdmin
-      }
+    res.json({token,user: {id: user._id,name: user.username,email: user.email,isAdmin: user.isAdmin}
     });
 
   } catch (err) {
